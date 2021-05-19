@@ -33,3 +33,10 @@ build/
 .vscode/
 
 .mvn
+target
+.project
+.classpath
+.settings/
+.openapi-generator
+openapi/.attach*
+.attach*
