@@ -1,0 +1,9 @@
+{
+	"configPackage": "com.kienast.certservice.config",
+	"apiPackage": "com.kienast.certservice.rest.api",
+	"modelPackage": "com.kienast.certservice.rest.api.model",
+	"interfaceOnly": true,
+	"java8": false,
+	"modelNameSuffix": "Model",
+	"hideGenerationTimestamp": true
+}
