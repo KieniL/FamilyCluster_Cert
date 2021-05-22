@@ -54,7 +54,7 @@ pipeline {
             script{
               try {
                 sh "rm trufflehog.txt || true"
-                sh 'docker run --rm --name trufflehog dxa4481/trufflehog --regex https://github.com/KieniL/FamilyCluster_Ansparen.git > trufflehog.txt'
+                sh 'docker run --rm --name trufflehog dxa4481/trufflehog --regex https://github.com/KieniL/FamilyCluster_Cert.git > trufflehog.txt'
           
                 publishHTML (target: [
                   allowMissing: false,
