@@ -17,7 +17,7 @@ WORKDIR /APP
 COPY --from=builder /home/app/target/cert.jar app.jar
 
 # run container as non root
-RUN apk update && addgroup -S familygroup && adduser -S familyuser -G familygroup
+RUN apk update && apk upgrade -U -a && addgroup -S familygroup && adduser -S familyuser -G familygroup
 USER familyuser
 
 ENTRYPOINT java -jar app.jar
