@@ -1,20 +1,8 @@
-#
-# Build stage
-#
-FROM maven:3.6.0-jdk-11-slim AS builder
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package -DskipTests
-
-
-#
-# Packaging stage
-#
 FROM adoptopenjdk/openjdk13:x86_64-alpine-jre13u-nightly
 
 WORKDIR /APP
 
-COPY --from=builder /home/app/target/cert.jar app.jar
+COPY ./target/cert.jar app.jar
 
 # run container as non root
 RUN apk update && apk upgrade -U -a && addgroup -S familygroup && adduser -S familyuser -G familygroup
