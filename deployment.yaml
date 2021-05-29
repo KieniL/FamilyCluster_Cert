@@ -4,7 +4,6 @@ metadata:
   name: certservice
   namespace: family
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app:  certservice
@@ -13,10 +12,26 @@ spec:
       labels:
         app:  certservice
     spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - certservice
+              topologyKey: kubernetes.io/hostname
+            weight: 100
       containers:
       - name:  certservice
         image: luke19/familycertservice:<VERSION>
         imagePullPolicy: Always
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 10000
+          runAsGroup: 10000
         resources:
           limits:
             memory: 512Mi
