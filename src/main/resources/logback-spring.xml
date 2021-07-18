@@ -6,7 +6,7 @@
         class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
-                %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %black(%d{ISO8601}) %msg%n%throwable
+                TIMESTAMP: %d{ISO8601}, REQUEST_ID: %X{REQUEST_ID}, SYSTEM_LOG_LEVEL: %highlight(%X{SYSTEM_LOG_LEVEL}), MESSAGE_LOG_LEVEL: %highlight(%-5level),  MESSAGE: %msg%n%throwable, THREAD_NAME: %t, LOGGER_NAME: %C{1.}, LOG_LINE_NUMBER: %L %n
             </Pattern>
         </layout>
     </appender>

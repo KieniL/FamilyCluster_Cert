@@ -12,6 +12,7 @@ import com.kienast.certservice.service.CertificationService;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -59,6 +60,8 @@ public class CertificationController implements CertApi{
 		logger.info("Info message");
 		logger.warn("warn message");
     logger.error("Error message");
+		MDC.put("SYSTEM_LOG_LEVEL", System.getenv("CERT_LOG_LEVEL") ); 
+ 		MDC.put("REQUEST_ID", "2025b9bcf"); 
 		logger.fatal("fatal message");
 		return ResponseEntity.ok(certificationService.getCertifications());
 	}
