@@ -1,5 +1,11 @@
 FROM adoptopenjdk/openjdk13:x86_64-alpine-jre13u-nightly
 
+ENV TZ=Europe/Berlin
+ENV DB_CERT_HOST=tmp
+ENV DB_CERT_DB=tmp
+ENV DB_CERT_USER=tmp
+ENV DB_CERT_PASS=tmp
+ENV LOG_LEVEL=DEBUG
 WORKDIR /APP
 
 COPY ./target/cert.jar app.jar
