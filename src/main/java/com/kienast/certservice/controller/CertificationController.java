@@ -60,7 +60,7 @@ public class CertificationController implements CertApi{
 		logger.info("Info message");
 		logger.warn("warn message");
     logger.error("Error message");
-		MDC.put("SYSTEM_LOG_LEVEL", System.getenv("CERT_LOG_LEVEL") ); 
+		MDC.put("SYSTEM_LOG_LEVEL", System.getenv("CERT_LOG_LEVEL")); 
  		MDC.put("REQUEST_ID", "2025b9bcf"); 
 		logger.fatal("fatal message");
 		return ResponseEntity.ok(certificationService.getCertifications());

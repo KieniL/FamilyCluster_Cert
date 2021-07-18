@@ -34,12 +34,11 @@ This means that every line log all things from the levels above
 
 ### Log Fields:
 
-* TIMESTAMP
-* REQUEST_ID
-* SYSTEM_LOG_LEVEL
-* LOG_DATA
-  * MESSAGE_LOG_LEVEL
-  * MESSAGE
-  * THREAD_NAME
-  * LOGGER_NAME
-  * LOG_LINE_NUMBER
+* timestamp
+* level (message)
+* thread
+* message
+* logger
+* mdc
+  * SYSTEM_LOG_LEVEL
+  * REQUEST_ID
