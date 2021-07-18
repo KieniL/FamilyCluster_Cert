@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
-
-    <appender name="Console"
-        class="ch.qos.logback.core.ConsoleAppender">
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <Pattern>
-                TIMESTAMP: %d{ISO8601}, REQUEST_ID: %X{REQUEST_ID}, SYSTEM_LOG_LEVEL: %highlight(%X{SYSTEM_LOG_LEVEL}), MESSAGE_LOG_LEVEL: %highlight(%-5level),  MESSAGE: %msg%n%throwable, THREAD_NAME: %t, LOGGER_NAME: %C{1.}, LOG_LINE_NUMBER: %L %n
-            </Pattern>
-        </layout>
-    </appender>
-
    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
-
                 <timestampFormat>yyyy-MM-dd'T'HH:mm:ss.SSSX</timestampFormat>
                 <timestampFormatTimezoneId>Etc/UTC</timestampFormatTimezoneId>
                 <appendLineSeparator>true</appendLineSeparator>
@@ -26,12 +14,8 @@
             </layout>
         </encoder>
     </appender>
-    
     <!-- LOG everything at INFO level -->
     <root level="info">
         <appender-ref ref="Console" />
     </root>
-
-
-
 </configuration>
