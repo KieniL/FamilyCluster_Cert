@@ -11,3 +11,22 @@ There are several things tested:
 * sonar scanning
 * mvn test + jacoco (unit Test coverage) --> jacoco plugin is needed
 * spotbugs (own maven plugin)
+
+
+## Logging
+
+The logging is done with the default logging of spring boot (logback-spring).
+A logback-spring.xml is added and a new environment variable (CERT_LOG_LEVEL)
+
+Set this variable to see different loggings:
+The hierarchy is as follows:
+OFF
+FATAL
+ERROR
+WARN
+INFO
+DEBUG
+TRACE
+
+
+This means that every line log all things from the levels above
