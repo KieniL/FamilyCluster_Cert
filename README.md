@@ -67,5 +67,3 @@ So the final one is:
   * REQUEST_ID
   * source ip
   * User id
-  * HTTP status Code
-  * Reason for Status Code
