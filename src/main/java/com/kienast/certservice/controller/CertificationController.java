@@ -55,7 +55,7 @@ public class CertificationController implements CertApi {
 	@Override
 	public ResponseEntity<CertificationModel> getCertification(String shortname, String JWT, String xRequestID,
 			String SOURCE_IP) {
-		initializeLogInfo("1", "192.168.0.0", "1");
+		initializeLogInfo(xRequestID, SOURCE_IP, "1");
 		logger.info("Got Request (Get Certification) for " + shortname);
 
 		CertificationModel certification = certificationService.getCertificationByShortname(shortname);
@@ -66,7 +66,7 @@ public class CertificationController implements CertApi {
 
 	@Override
 	public ResponseEntity<List<CertificationModel>> getCertifications(String JWT, String xRequestID, String SOURCE_IP) {
-		initializeLogInfo("1", "192.168.0.0", "1");
+		initializeLogInfo(xRequestID, SOURCE_IP, "1");
 		logger.info("Got Request (Get Certifications)");
 
 		List<CertificationModel> certifications = certificationService.getCertifications();
