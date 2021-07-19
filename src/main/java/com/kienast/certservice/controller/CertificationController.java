@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,9 @@ public class CertificationController implements CertApi {
 
 	@Autowired
 	private CertificationService certificationService;
+
+	@Value("${logging.level.com.kienast.certservice}")
+	private String loglevel;
 
 	@Override
 	public ResponseEntity<CertificationModel> addCertifaction(String JWT, String xRequestID, String SOURCE_IP,
@@ -76,7 +80,7 @@ public class CertificationController implements CertApi {
 	}
 
 	private void initializeLogInfo(String requestId, String sourceIP, String userId) {
-		MDC.put("SYSTEM_LOG_LEVEL", System.getenv("CERT_LOG_LEVEL"));
+		MDC.put("SYSTEM_LOG_LEVEL", loglevel);
 		MDC.put("REQUEST_ID", requestId);
 		MDC.put("SOURCE_IP", sourceIP);
 		MDC.put("USER_ID", userId);
