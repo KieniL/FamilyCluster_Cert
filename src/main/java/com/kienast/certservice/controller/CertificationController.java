@@ -50,7 +50,7 @@ public class CertificationController implements CertApi {
 	public ResponseEntity<CertificationModel> addCertifaction(String JWT, String xRequestID, String SOURCE_IP,
 			@Valid CertificationModel certificationModel) {
 
-		initializeLogInfo(xRequestID, SOURCE_IP, "1");
+		initializeLogInfo(xRequestID, SOURCE_IP, "");
 		logger.info("Got Request (Add Certification) for " + certificationModel.getDescription());
 
 		try {
@@ -96,7 +96,7 @@ public class CertificationController implements CertApi {
 	public ResponseEntity<CertificationModel> getCertification(String shortname, String JWT, String xRequestID,
 			String SOURCE_IP) {
 		CertificationModel certification = null;
-		initializeLogInfo(xRequestID, SOURCE_IP, "1");
+		initializeLogInfo(xRequestID, SOURCE_IP, "");
 		logger.info("Got Request (Get Certification) for " + shortname);
 
 		try {
@@ -128,7 +128,7 @@ public class CertificationController implements CertApi {
 	public ResponseEntity<List<CertificationModel>> getCertifications(String JWT, String xRequestID, String SOURCE_IP) {
 		List<CertificationModel> certifications = new ArrayList<>();
 
-		initializeLogInfo(xRequestID, SOURCE_IP, "1");
+		initializeLogInfo(xRequestID, SOURCE_IP, "");
 		logger.info("Got Request (Get Certifications)");
 
 		try {
