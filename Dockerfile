@@ -9,6 +9,6 @@ ENV AUTH_URL=test1234
 
 COPY ./target/cert.jar /APP/app.jar
 
-ENTRYPOINT ["java" ,"-jar app.jar"]
+ENTRYPOINT ["java" ,"-jar", "app.jar"]
 
 EXPOSE 8080
