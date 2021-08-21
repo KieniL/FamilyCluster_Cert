@@ -1,4 +1,11 @@
-FROM luke19/spring-base-image:1628781512
+FROM luke19/spring-base-image:1629374721
+
+LABEL maintainer="KieniL"
+LABEL name="cert"
+LABEL version="1.0.0"
+LABEL author="KieniL"
+LABEL contact="https://github.com/KieniL/FamilyCluster_Cert/issues"
+LABEL documentation="https://github.com/KieniL/FamilyCluster_Cert"
 
 ENV DB_CERT_HOST=tmp
 ENV DB_CERT_DB=tmp
